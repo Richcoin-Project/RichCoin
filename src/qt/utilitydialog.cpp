@@ -67,7 +67,7 @@ HelpMessageDialog::HelpMessageDialog(QWidget *parent) :
     header = tr("Myriadcoin Core") + " " + tr("version") + " " +
         QString::fromStdString(FormatFullVersion()) + "\n\n" +
         tr("Usage:") + "\n" +
-        "  myriadcoin-qt [" + tr("command-line options") + "]                     " + "\n";
+        "  richcoin-qt [" + tr("command-line options") + "]                     " + "\n";
 
     coreOptions = QString::fromStdString(HelpMessage(HMM_BITCOIN_QT));
 

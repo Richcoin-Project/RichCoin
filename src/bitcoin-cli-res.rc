@@ -20,10 +20,10 @@ BEGIN
             VALUE "CompanyName",        "Myriadcoin"
             VALUE "FileDescription",    "Myriadcoin-cli (OSS RPC client for Myriadcoin)"
             VALUE "FileVersion",        VER_FILEVERSION_STR
-            VALUE "InternalName",       "myriadcoin-cli"
+            VALUE "InternalName",       "richcoin-cli"
             VALUE "LegalCopyright",     COPYRIGHT_STR
             VALUE "LegalTrademarks1",   "Distributed under the MIT/X11 software license, see the accompanying file COPYING or http://www.opensource.org/licenses/mit-license.php."
-            VALUE "OriginalFilename",   "myriadcoin-cli.exe"
+            VALUE "OriginalFilename",   "richcoin-cli.exe"
             VALUE "ProductName",        "Myriadcoin-cli"
             VALUE "ProductVersion",     VER_PRODUCTVERSION_STR
         END

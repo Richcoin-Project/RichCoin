@@ -2,11 +2,11 @@
 <context>
     <name>AboutDialog</name>
     <message>
-        <source>About Myriadcoin Core</source>
+        <source>About Richcoin Core</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <source>&lt;b&gt;Myriadcoin Core&lt;/b&gt; version</source>
+        <source>&lt;b&gt;Richcoin Core&lt;/b&gt; version</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -31,7 +31,7 @@ Eric Young (eay@cryptsoft.com) y UPnP software escrito por Thomas Bernard.</tran
         <translation>Copyright</translation>
     </message>
     <message>
-        <source>The Bitcoin and Myriadcoin Core developers</source>
+        <source>The Bitcoin and Richcoin Core developers</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -106,11 +106,11 @@ Eric Young (eay@cryptsoft.com) y UPnP software escrito por Thomas Bernard.</tran
         <translation type="unfinished"/>
     </message>
     <message>
-        <source>These are your Myriadcoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <source>These are your Richcoin addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <source>These are your Myriadcoin addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <source>These are your Richcoin addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -208,8 +208,8 @@ Eric Young (eay@cryptsoft.com) y UPnP software escrito por Thomas Bernard.</tran
         <translation>Confirma la codificación de cartera</translation>
     </message>
     <message>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR MYRIADCOINS&lt;/b&gt;!</source>
-        <translation>Atención: ¡Si codificas tu billetera y pierdes la contraseña perderás &lt;b&gt;TODOS TUS MYRIADCOINS&lt;/b&gt;!</translation>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR RICHCOINS&lt;/b&gt;!</source>
+        <translation>Atención: ¡Si codificas tu billetera y pierdes la contraseña perderás &lt;b&gt;TODOS TUS RICHCOINS&lt;/b&gt;!</translation>
     </message>
     <message>
         <source>Are you sure you wish to encrypt your wallet?</source>
@@ -228,8 +228,8 @@ Eric Young (eay@cryptsoft.com) y UPnP software escrito por Thomas Bernard.</tran
         <translation>Billetera codificada</translation>
     </message>
     <message>
-        <source>Myriadcoin will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your myriadcoins from being stolen by malware infecting your computer.</source>
-        <translation>Myriadcoin se cerrará para finalizar el proceso de encriptación. Recuerde que encriptar su billetera no protegera completatamente sus myriadcoins de ser robados por malware que infecte su computador</translation>
+        <source>Richcoin will close now to finish the encryption process. Remember that encrypting your wallet cannot fully protect your richcoins from being stolen by malware infecting your computer.</source>
+        <translation>Richcoin se cerrará para finalizar el proceso de encriptación. Recuerde que encriptar su billetera no protegera completatamente sus richcoins de ser robados por malware que infecte su computador</translation>
     </message>
     <message>
         <source>Wallet encryption failed</source>
@@ -299,8 +299,8 @@ Eric Young (eay@cryptsoft.com) y UPnP software escrito por Thomas Bernard.</tran
         <translation>Salir del programa</translation>
     </message>
     <message>
-        <source>Show information about Myriadcoin</source>
-        <translation>Muestra información acerca de Myriadcoin</translation>
+        <source>Show information about Richcoin</source>
+        <translation>Muestra información acerca de Richcoin</translation>
     </message>
     <message>
         <source>About &amp;Qt</source>
@@ -347,11 +347,11 @@ Eric Young (eay@cryptsoft.com) y UPnP software escrito por Thomas Bernard.</tran
         <translation>Cargando el index de bloques...</translation>
     </message>
     <message>
-        <source>Send coins to a Myriadcoin address</source>
+        <source>Send coins to a Richcoin address</source>
         <translation>Enviar monedas a una dirección bitcoin</translation>
     </message>
     <message>
-        <source>Modify configuration options for Myriadcoin</source>
+        <source>Modify configuration options for Richcoin</source>
         <translation>Modifica las opciones de configuración de bitcoin</translation>
     </message>
     <message>
@@ -375,8 +375,8 @@ Eric Young (eay@cryptsoft.com) y UPnP software escrito por Thomas Bernard.</tran
         <translation type="unfinished"/>
     </message>
     <message>
-        <source>Myriadcoin</source>
-        <translation>Myriadcoin</translation>
+        <source>Richcoin</source>
+        <translation>Richcoin</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -403,11 +403,11 @@ Eric Young (eay@cryptsoft.com) y UPnP software escrito por Thomas Bernard.</tran
         <translation type="unfinished"/>
     </message>
     <message>
-        <source>Sign messages with your Myriadcoin addresses to prove you own them</source>
+        <source>Sign messages with your Richcoin addresses to prove you own them</source>
         <translation>Firmar un mensaje para provar que usted es dueño de esta dirección</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Myriadcoin addresses</source>
+        <source>Verify messages to ensure they were signed with specified Richcoin addresses</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -431,15 +431,15 @@ Eric Young (eay@cryptsoft.com) y UPnP software escrito por Thomas Bernard.</tran
         <translation>[red-de-pruebas]</translation>
     </message>
     <message>
-        <source>Myriadcoin Core</source>
+        <source>Richcoin Core</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <source>Request payments (generates QR codes and myriadcoin: URIs)</source>
+        <source>Request payments (generates QR codes and richcoin: URIs)</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <source>&amp;About Myriadcoin Core</source>
+        <source>&amp;About Richcoin Core</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -451,7 +451,7 @@ Eric Young (eay@cryptsoft.com) y UPnP software escrito por Thomas Bernard.</tran
         <translation type="unfinished"/>
     </message>
     <message>
-        <source>Open a myriadcoin: URI or payment request</source>
+        <source>Open a richcoin: URI or payment request</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -459,16 +459,16 @@ Eric Young (eay@cryptsoft.com) y UPnP software escrito por Thomas Bernard.</tran
         <translation type="unfinished"/>
     </message>
     <message>
-        <source>Show the Myriadcoin Core help message to get a list with possible Myriadcoin command-line options</source>
+        <source>Show the Richcoin Core help message to get a list with possible Richcoin command-line options</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <source>Myriadcoin client</source>
-        <translation>Cliente Myriadcoin</translation>
+        <source>Richcoin client</source>
+        <translation>Cliente Richcoin</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to Myriadcoin network</source>
-        <translation><numerusform>%n conexión activa hacia la red Myriadcoin</numerusform><numerusform>%n conexiones activas hacia la red Myriadcoin</numerusform></translation>
+        <source>%n active connection(s) to Richcoin network</source>
+        <translation><numerusform>%n conexión activa hacia la red Richcoin</numerusform><numerusform>%n conexiones activas hacia la red Richcoin</numerusform></translation>
     </message>
     <message>
         <source>No block source available...</source>
@@ -562,7 +562,7 @@ Dirección: %4</translation>
         <translation>La billetera esta &lt;b&gt;codificada&lt;/b&gt; y actualmente &lt;b&gt;bloqueda&lt;/b&gt;</translation>
     </message>
     <message>
-        <source>A fatal error occurred. Myriadcoin can no longer continue safely and will quit.</source>
+        <source>A fatal error occurred. Richcoin can no longer continue safely and will quit.</source>
         <translation type="unfinished"/>
     </message>
 </context>
@@ -847,8 +847,8 @@ Dirección: %4</translation>
         <translation>La dirección introducida &quot;%1&quot; ya esta guardada en la libreta de direcciones.</translation>
     </message>
     <message>
-        <source>The entered address &quot;%1&quot; is not a valid Myriadcoin address.</source>
-        <translation>La dirección introducida &quot;%1&quot; no es una dirección Myriadcoin valida.</translation>
+        <source>The entered address &quot;%1&quot; is not a valid Richcoin address.</source>
+        <translation>La dirección introducida &quot;%1&quot; no es una dirección Richcoin valida.</translation>
     </message>
     <message>
         <source>Could not unlock wallet.</source>
@@ -885,11 +885,11 @@ Dirección: %4</translation>
 <context>
     <name>HelpMessageDialog</name>
     <message>
-        <source>Myriadcoin Core - Command-line options</source>
+        <source>Richcoin Core - Command-line options</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <source>Myriadcoin Core</source>
+        <source>Richcoin Core</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -937,15 +937,15 @@ Dirección: %4</translation>
         <translation type="unfinished"/>
     </message>
     <message>
-        <source>Welcome to Myriadcoin Core.</source>
+        <source>Welcome to Richcoin Core.</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <source>As this is the first time the program is launched, you can choose where Myriadcoin Core will store its data.</source>
+        <source>As this is the first time the program is launched, you can choose where Richcoin Core will store its data.</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <source>Myriadcoin Core will download and store a copy of the Myriadcoin block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
+        <source>Richcoin Core will download and store a copy of the Richcoin block chain. At least %1GB of data will be stored in this directory, and it will grow over time. The wallet will also be stored in this directory.</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -957,8 +957,8 @@ Dirección: %4</translation>
         <translation type="unfinished"/>
     </message>
     <message>
-        <source>Myriadcoin</source>
-        <translation>Myriadcoin</translation>
+        <source>Richcoin</source>
+        <translation>Richcoin</translation>
     </message>
     <message>
         <source>Error: Specified data directory &quot;%1&quot; can not be created.</source>
@@ -1019,12 +1019,12 @@ Dirección: %4</translation>
         <translation>Comisión de &amp;transacciónes</translation>
     </message>
     <message>
-        <source>Automatically start Myriadcoin after logging in to the system.</source>
-        <translation>Inicia Myriadcoin automáticamente despues de encender el computador</translation>
+        <source>Automatically start Richcoin after logging in to the system.</source>
+        <translation>Inicia Richcoin automáticamente despues de encender el computador</translation>
     </message>
     <message>
-        <source>&amp;Start Myriadcoin on system login</source>
-        <translation>&amp;Inicia Myriadcoin al iniciar el sistema</translation>
+        <source>&amp;Start Richcoin on system login</source>
+        <translation>&amp;Inicia Richcoin al iniciar el sistema</translation>
     </message>
     <message>
         <source>Size of &amp;database cache</source>
@@ -1039,7 +1039,7 @@ Dirección: %4</translation>
         <translation type="unfinished"/>
     </message>
     <message>
-        <source>Connect to the Myriadcoin network through a SOCKS proxy.</source>
+        <source>Connect to the Richcoin network through a SOCKS proxy.</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -1099,8 +1099,8 @@ Dirección: %4</translation>
         <translation type="unfinished"/>
     </message>
     <message>
-        <source>Automatically open the Myriadcoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Abre automáticamente el puerto del cliente Myriadcoin en el router. Esto funciona solo cuando tu router es compatible con UPnP y está habilitado.</translation>
+        <source>Automatically open the Richcoin client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Abre automáticamente el puerto del cliente Richcoin en el router. Esto funciona solo cuando tu router es compatible con UPnP y está habilitado.</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
@@ -1155,7 +1155,7 @@ Dirección: %4</translation>
         <translation type="unfinished"/>
     </message>
     <message>
-        <source>The user interface language can be set here. This setting will take effect after restarting Myriadcoin.</source>
+        <source>The user interface language can be set here. This setting will take effect after restarting Richcoin.</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -1167,7 +1167,7 @@ Dirección: %4</translation>
         <translation>Elige la subdivisión por defecto para mostrar cantidaded en la interfaz cuando se envien monedas</translation>
     </message>
     <message>
-        <source>Whether to show Myriadcoin addresses in the transaction list or not.</source>
+        <source>Whether to show Richcoin addresses in the transaction list or not.</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -1222,7 +1222,7 @@ Dirección: %4</translation>
         <translation>Formulario</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Myriadcoin network after a connection is established, but this process has not completed yet.</source>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Richcoin network after a connection is established, but this process has not completed yet.</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -1277,7 +1277,7 @@ Dirección: %4</translation>
         <translation type="unfinished"/>
     </message>
     <message>
-        <source>URI can not be parsed! This can be caused by an invalid Myriadcoin address or malformed URI parameters.</source>
+        <source>URI can not be parsed! This can be caused by an invalid Richcoin address or malformed URI parameters.</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -1289,7 +1289,7 @@ Dirección: %4</translation>
         <translation type="unfinished"/>
     </message>
     <message>
-        <source>Cannot start myriadcoin: click-to-pay handler</source>
+        <source>Cannot start richcoin: click-to-pay handler</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -1344,8 +1344,8 @@ Dirección: %4</translation>
 <context>
     <name>QObject</name>
     <message>
-        <source>Myriadcoin</source>
-        <translation>Myriadcoin</translation>
+        <source>Richcoin</source>
+        <translation>Richcoin</translation>
     </message>
     <message>
         <source>Error: Specified data directory &quot;%1&quot; does not exist.</source>
@@ -1360,12 +1360,12 @@ Dirección: %4</translation>
         <translation type="unfinished"/>
     </message>
     <message>
-        <source>Myriadcoin Core didn&apos;t yet exit safely...</source>
+        <source>Richcoin Core didn&apos;t yet exit safely...</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <source>Enter a Myriadcoin address (e.g. 1NS17iag9jJgTHD1VXjvLCEnZuQ3rJDE9L)</source>
-        <translation>Introduce una dirección Myriadcoin (ej. 1NS17iag9jJgTHD1VXjvLCEnZuQ3rJDE9L)</translation>
+        <source>Enter a Richcoin address (e.g. 1NS17iag9jJgTHD1VXjvLCEnZuQ3rJDE9L)</source>
+        <translation>Introduce una dirección Richcoin (ej. 1NS17iag9jJgTHD1VXjvLCEnZuQ3rJDE9L)</translation>
     </message>
 </context>
 <context>
@@ -1486,7 +1486,7 @@ Dirección: %4</translation>
         <translation type="unfinished"/>
     </message>
     <message>
-        <source>Open the Myriadcoin debug log file from the current data directory. This can take a few seconds for large log files.</source>
+        <source>Open the Richcoin debug log file from the current data directory. This can take a few seconds for large log files.</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -1494,7 +1494,7 @@ Dirección: %4</translation>
         <translation>Limpiar Consola</translation>
     </message>
     <message>
-        <source>Welcome to the Myriadcoin RPC console.</source>
+        <source>Welcome to the Richcoin RPC console.</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -1557,7 +1557,7 @@ Dirección: %4</translation>
         <translation type="unfinished"/>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Myriadcoin network.</source>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Richcoin network.</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -1870,7 +1870,7 @@ Dirección: %4</translation>
         <translation type="unfinished"/>
     </message>
     <message>
-        <source>Warning: Invalid Myriadcoin address</source>
+        <source>Warning: Invalid Richcoin address</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -1957,7 +1957,7 @@ Dirección: %4</translation>
         <translation type="unfinished"/>
     </message>
     <message>
-        <source>A message that was attached to the myriadcoin: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Myriadcoin network.</source>
+        <source>A message that was attached to the richcoin: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Richcoin network.</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -1976,7 +1976,7 @@ Dirección: %4</translation>
 <context>
     <name>ShutdownWindow</name>
     <message>
-        <source>Myriadcoin Core is shutting down...</source>
+        <source>Richcoin Core is shutting down...</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -2000,7 +2000,7 @@ Dirección: %4</translation>
     </message>
     <message>
         <source>The address to sign the message with (e.g. 1NS17iag9jJgTHD1VXjvLCEnZuQ3rJDE9L)</source>
-        <translation>Introduce una dirección Myriadcoin (ej. 1NS17iag9jJgTHD1VXjvLCEnZuQ3rJDE9L)</translation>
+        <translation>Introduce una dirección Richcoin (ej. 1NS17iag9jJgTHD1VXjvLCEnZuQ3rJDE9L)</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -2031,7 +2031,7 @@ Dirección: %4</translation>
         <translation type="unfinished"/>
     </message>
     <message>
-        <source>Sign the message to prove you own this Myriadcoin address</source>
+        <source>Sign the message to prove you own this Richcoin address</source>
         <translation>Firmar un mensjage para probar que usted es dueño de esta dirección</translation>
     </message>
     <message>
@@ -2056,10 +2056,10 @@ Dirección: %4</translation>
     </message>
     <message>
         <source>The address the message was signed with (e.g. 1NS17iag9jJgTHD1VXjvLCEnZuQ3rJDE9L)</source>
-        <translation>Introduce una dirección Myriadcoin (ej. 1NS17iag9jJgTHD1VXjvLCEnZuQ3rJDE9L)</translation>
+        <translation>Introduce una dirección Richcoin (ej. 1NS17iag9jJgTHD1VXjvLCEnZuQ3rJDE9L)</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified Myriadcoin address</source>
+        <source>Verify the message to ensure it was signed with the specified Richcoin address</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -2071,8 +2071,8 @@ Dirección: %4</translation>
         <translation type="unfinished"/>
     </message>
     <message>
-        <source>Enter a Myriadcoin address (e.g. 1NS17iag9jJgTHD1VXjvLCEnZuQ3rJDE9L)</source>
-        <translation>Introduce una dirección Myriadcoin (ej. 1NS17iag9jJgTHD1VXjvLCEnZuQ3rJDE9L)</translation>
+        <source>Enter a Richcoin address (e.g. 1NS17iag9jJgTHD1VXjvLCEnZuQ3rJDE9L)</source>
+        <translation>Introduce una dirección Richcoin (ej. 1NS17iag9jJgTHD1VXjvLCEnZuQ3rJDE9L)</translation>
     </message>
     <message>
         <source>Click &quot;Sign Message&quot; to generate signature</source>
@@ -2080,11 +2080,11 @@ Dirección: %4</translation>
     </message>
     <message>
         <source>The entered address is invalid.</source>
-        <translation>La dirección introducida &quot;%1&quot; no es una dirección Myriadcoin valida.</translation>
+        <translation>La dirección introducida &quot;%1&quot; no es una dirección Richcoin valida.</translation>
     </message>
     <message>
         <source>Please check the address and try again.</source>
-        <translation>Por favor, revise la dirección Myriadcoin e inténtelo denuevo</translation>
+        <translation>Por favor, revise la dirección Richcoin e inténtelo denuevo</translation>
     </message>
     <message>
         <source>The entered address does not refer to a key.</source>
@@ -2130,11 +2130,11 @@ Dirección: %4</translation>
 <context>
     <name>SplashScreen</name>
     <message>
-        <source>Myriadcoin Core</source>
+        <source>Richcoin Core</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <source>The Bitcoin and Myriadcoin Core developers</source>
+        <source>The Bitcoin and Richcoin Core developers</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -2616,12 +2616,12 @@ Dirección: %4</translation>
 </translation>
     </message>
     <message>
-        <source>Specify configuration file (default: myriadcoin.conf)</source>
-        <translation>Especifica archivo de configuración (predeterminado: myriadcoin.conf)
+        <source>Specify configuration file (default: richcoin.conf)</source>
+        <translation>Especifica archivo de configuración (predeterminado: richcoin.conf)
 </translation>
     </message>
     <message>
-        <source>Specify pid file (default: myriadcoind.pid)</source>
+        <source>Specify pid file (default: richcoind.pid)</source>
         <translation>Especifica archivo pid (predeterminado: bitcoin.pid)
 </translation>
     </message>
@@ -2668,7 +2668,7 @@ Dirección: %4</translation>
 </translation>
     </message>
     <message>
-        <source>Myriadcoin Core RPC client version</source>
+        <source>Richcoin Core RPC client version</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -2689,13 +2689,13 @@ Dirección: %4</translation>
         <source>%s, you must set a rpcpassword in the configuration file:
 %s
 It is recommended you use the following random password:
-rpcuser=myriadcoinrpc
+rpcuser=richcoinrpc
 rpcpassword=%s
 (you do not need to remember this password)
 The username and password MUST NOT be the same.
 If the file does not exist, create it with owner-readable-only file permissions.
 It is also recommended to set alertnotify so you are notified of problems;
-for example: alertnotify=echo %%s | mail -s &quot;Myriadcoin Alert&quot; admin@foo.com
+for example: alertnotify=echo %%s | mail -s &quot;Richcoin Alert&quot; admin@foo.com
 </source>
         <translation type="unfinished"/>
     </message>
@@ -2768,7 +2768,7 @@ for example: alertnotify=echo %%s | mail -s &quot;Myriadcoin Alert&quot; admin@f
         <translation type="unfinished"/>
     </message>
     <message>
-        <source>Unable to bind to %s on this computer. Myriadcoin Core is probably already running.</source>
+        <source>Unable to bind to %s on this computer. Richcoin Core is probably already running.</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -2780,8 +2780,8 @@ for example: alertnotify=echo %%s | mail -s &quot;Myriadcoin Alert&quot; admin@f
         <translation>Precaución: -paytxfee es muy alta. Esta es la comisión que pagarás si envias una transacción.</translation>
     </message>
     <message>
-        <source>Warning: Please check that your computer&apos;s date and time are correct! If your clock is wrong Myriadcoin will not work properly.</source>
-        <translation>Precaución: Por favor revise que la fecha y hora de tu ordenador son correctas. Si tu reloj está mal configurado Myriadcoin no funcionará correctamente.</translation>
+        <source>Warning: Please check that your computer&apos;s date and time are correct! If your clock is wrong Richcoin will not work properly.</source>
+        <translation>Precaución: Por favor revise que la fecha y hora de tu ordenador son correctas. Si tu reloj está mal configurado Richcoin no funcionará correctamente.</translation>
     </message>
     <message>
         <source>Warning: The network does not appear to fully agree! Some miners appear to be experiencing issues.</source>
@@ -2816,7 +2816,7 @@ for example: alertnotify=echo %%s | mail -s &quot;Myriadcoin Alert&quot; admin@f
         <translation type="unfinished"/>
     </message>
     <message>
-        <source>Myriadcoin Core Daemon</source>
+        <source>Richcoin Core Daemon</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -3025,7 +3025,7 @@ for example: alertnotify=echo %%s | mail -s &quot;Myriadcoin Alert&quot; admin@f
         <translation type="unfinished"/>
     </message>
     <message>
-        <source>Usage (deprecated, use myriadcoin-cli):</source>
+        <source>Usage (deprecated, use richcoin-cli):</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -3061,7 +3061,7 @@ for example: alertnotify=echo %%s | mail -s &quot;Myriadcoin Alert&quot; admin@f
         <translation>Importar bloques desde el archivo externo blk000??.dat </translation>
     </message>
     <message>
-        <source>Cannot obtain a lock on data directory %s. Myriadcoin Core is probably already running.</source>
+        <source>Cannot obtain a lock on data directory %s. Richcoin Core is probably already running.</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -3125,7 +3125,7 @@ for example: alertnotify=echo %%s | mail -s &quot;Myriadcoin Alert&quot; admin@f
         <translation type="unfinished"/>
     </message>
     <message>
-        <source>RPC SSL options: (see the Myriadcoin Wiki for SSL setup instructions)</source>
+        <source>RPC SSL options: (see the Richcoin Wiki for SSL setup instructions)</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -3145,11 +3145,11 @@ for example: alertnotify=echo %%s | mail -s &quot;Myriadcoin Alert&quot; admin@f
         <translation type="unfinished"/>
     </message>
     <message>
-        <source>SSL options: (see the Myriadcoin Wiki for SSL setup instructions)</source>
-        <translation>Opciones SSL: (ver la Myriadcoin Wiki para instrucciones de configuración SSL)</translation>
+        <source>SSL options: (see the Richcoin Wiki for SSL setup instructions)</source>
+        <translation>Opciones SSL: (ver la Richcoin Wiki para instrucciones de configuración SSL)</translation>
     </message>
     <message>
-        <source>Send command to Myriadcoin Core</source>
+        <source>Send command to Richcoin Core</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -3185,7 +3185,7 @@ for example: alertnotify=echo %%s | mail -s &quot;Myriadcoin Alert&quot; admin@f
         <translation>Especifica tiempo de espera para conexion en milisegundos (predeterminado: 5000)</translation>
     </message>
     <message>
-        <source>Start Myriadcoin Core Daemon</source>
+        <source>Start Richcoin Core Daemon</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -3312,12 +3312,12 @@ for example: alertnotify=echo %%s | mail -s &quot;Myriadcoin Alert&quot; admin@f
         <translation>Error cargando wallet.dat: Billetera corrupta</translation>
     </message>
     <message>
-        <source>Error loading wallet.dat: Wallet requires newer version of Myriadcoin</source>
-        <translation>Error cargando wallet.dat: Billetera necesita una vercion reciente de Myriadcoin</translation>
+        <source>Error loading wallet.dat: Wallet requires newer version of Richcoin</source>
+        <translation>Error cargando wallet.dat: Billetera necesita una vercion reciente de Richcoin</translation>
     </message>
     <message>
-        <source>Wallet needed to be rewritten: restart Myriadcoin to complete</source>
-        <translation>La billetera necesita ser reescrita: reinicie Myriadcoin para completar</translation>
+        <source>Wallet needed to be rewritten: restart Richcoin to complete</source>
+        <translation>La billetera necesita ser reescrita: reinicie Richcoin para completar</translation>
     </message>
     <message>
         <source>Error loading wallet.dat</source>

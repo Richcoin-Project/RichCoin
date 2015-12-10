@@ -20,10 +20,10 @@ BEGIN
             VALUE "CompanyName",        "Myriadcoin"
             VALUE "FileDescription",    "Myriadcoind (OSS daemon/client for Myriadcoin)"
             VALUE "FileVersion",        VER_FILEVERSION_STR
-            VALUE "InternalName",       "myriadcoind"
+            VALUE "InternalName",       "richcoind"
             VALUE "LegalCopyright",     COPYRIGHT_STR
             VALUE "LegalTrademarks1",   "Distributed under the MIT/X11 software license, see the accompanying file COPYING or http://www.opensource.org/licenses/mit-license.php."
-            VALUE "OriginalFilename",   "myriadcoind.exe"
+            VALUE "OriginalFilename",   "richcoind.exe"
             VALUE "ProductName",        "Myriadcoind"
             VALUE "ProductVersion",     VER_PRODUCTVERSION_STR
         END

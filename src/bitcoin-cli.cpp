@@ -44,9 +44,9 @@ static bool AppInitRPC(int argc, char* argv[])
         // First part of help message is specific to RPC client
         std::string strUsage = _("Myriadcoin Core RPC client version") + " " + FormatFullVersion() + "\n\n" +
             _("Usage:") + "\n" +
-              "  myriadcoin-cli [options] <command> [params]  " + _("Send command to Myriadcoin Core") + "\n" +
-              "  myriadcoin-cli [options] help                " + _("List commands") + "\n" +
-              "  myriadcoin-cli [options] help <command>      " + _("Get help for a command") + "\n";
+              "  richcoin-cli [options] <command> [params]  " + _("Send command to Myriadcoin Core") + "\n" +
+              "  richcoin-cli [options] help                " + _("List commands") + "\n" +
+              "  richcoin-cli [options] help <command>      " + _("Get help for a command") + "\n";
 
         strUsage += "\n" + HelpMessageCli(true);
 

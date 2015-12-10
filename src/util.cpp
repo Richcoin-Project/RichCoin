@@ -914,7 +914,7 @@ static std::string FormatException(std::exception* pex, const char* pszThread)
     char pszModule[MAX_PATH] = "";
     GetModuleFileNameA(NULL, pszModule, sizeof(pszModule));
 #else
-    const char* pszModule = "myriadcoin";
+    const char* pszModule = "Richcoin";
 #endif
     if (pex)
         return strprintf(
@@ -941,13 +941,13 @@ void PrintExceptionContinue(std::exception* pex, const char* pszThread)
 boost::filesystem::path GetDefaultDataDir()
 {
     namespace fs = boost::filesystem;
-    // Windows < Vista: C:\Documents and Settings\Username\Application Data\Myriadcoin
-    // Windows >= Vista: C:\Users\Username\AppData\Roaming\Myriadcoin
-    // Mac: ~/Library/Application Support/Myriadcoin
-    // Unix: ~/.myriadcoin
+    // Windows < Vista: C:\Documents and Settings\Username\Application Data\Richcoin
+    // Windows >= Vista: C:\Users\Username\AppData\Roaming\Richcoin
+    // Mac: ~/Library/Application Support/Richcoin
+    // Unix: ~/.richcoin
 #ifdef WIN32
     // Windows
-    return GetSpecialFolderPath(CSIDL_APPDATA) / "Myriadcoin";
+    return GetSpecialFolderPath(CSIDL_APPDATA) / "Richcoin";
 #else
     fs::path pathRet;
     char* pszHome = getenv("HOME");
@@ -959,10 +959,10 @@ boost::filesystem::path GetDefaultDataDir()
     // Mac
     pathRet /= "Library/Application Support";
     TryCreateDirectory(pathRet);
-    return pathRet / "Myriadcoin";
+    return pathRet / "Richcoin";
 #else
     // Unix
-    return pathRet / ".myriadcoin";
+    return pathRet / ".richcoin";
 #endif
 #endif
 }
@@ -1011,7 +1011,7 @@ void ClearDatadirCache()
 
 boost::filesystem::path GetConfigFile()
 {
-    boost::filesystem::path pathConfigFile(GetArg("-conf", "myriadcoin.conf"));
+    boost::filesystem::path pathConfigFile(GetArg("-conf", "richcoin.conf"));
     if (!pathConfigFile.is_complete()) pathConfigFile = GetDataDir(false) / pathConfigFile;
     return pathConfigFile;
 }
@@ -1044,7 +1044,7 @@ void ReadConfigFile(map<string, string>& mapSettingsRet,
 
 boost::filesystem::path GetPidFile()
 {
-    boost::filesystem::path pathPidFile(GetArg("-pid", "myriadcoind.pid"));
+    boost::filesystem::path pathPidFile(GetArg("-pid", "richcoind.pid"));
     if (!pathPidFile.is_complete()) pathPidFile = GetDataDir() / pathPidFile;
     return pathPidFile;
 }

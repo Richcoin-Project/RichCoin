@@ -47,10 +47,10 @@
 using namespace boost;
 
 const int BITCOIN_IPC_CONNECT_TIMEOUT = 1000; // milliseconds
-const QString BITCOIN_IPC_PREFIX("myriadcoin:");
-const char* BITCOIN_REQUEST_MIMETYPE = "application/myriadcoin-paymentrequest";
-const char* BITCOIN_PAYMENTACK_MIMETYPE = "application/myriadcoin-paymentack";
-const char* BITCOIN_PAYMENTACK_CONTENTTYPE = "application/myriadcoin-payment";
+const QString BITCOIN_IPC_PREFIX("richcoin:");
+const char* BITCOIN_REQUEST_MIMETYPE = "application/richcoin-paymentrequest";
+const char* BITCOIN_PAYMENTACK_MIMETYPE = "application/richcoin-paymentack";
+const char* BITCOIN_PAYMENTACK_CONTENTTYPE = "application/richcoin-payment";
 
 X509_STORE* PaymentServer::certStore = NULL;
 void PaymentServer::freeCertStore()
@@ -290,7 +290,7 @@ PaymentServer::PaymentServer(QObject* parent, bool startLocalServer) :
         if (!uriServer->listen(name)) {
             // constructor is called early in init, so don't use "emit message()" here
             QMessageBox::critical(0, tr("Payment request error"),
-                tr("Cannot start myriadcoin: click-to-pay handler"));
+                tr("Cannot start richcoin: click-to-pay handler"));
         }
         else {
             connect(uriServer, SIGNAL(newConnection()), this, SLOT(handleURIConnection()));

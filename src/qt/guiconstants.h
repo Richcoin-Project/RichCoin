@@ -42,7 +42,7 @@ static const int MAX_PAYMENT_REQUEST_SIZE = 50000; // bytes
 #define SPINNER_FRAMES 35
 
 #define QAPP_ORG_NAME "Myriadcoin"
-#define QAPP_ORG_DOMAIN "myriadcoin.org"
+#define QAPP_ORG_DOMAIN "richcoin.org"
 #define QAPP_APP_NAME_DEFAULT "Myriadcoin-Qt"
 #define QAPP_APP_NAME_TESTNET "Myriadcoin-Qt-testnet"
 

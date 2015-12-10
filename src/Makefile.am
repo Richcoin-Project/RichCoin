@@ -13,11 +13,11 @@ endif
 bin_PROGRAMS =
 
 if BUILD_BITCOIND
-  bin_PROGRAMS += myriadcoind
+  bin_PROGRAMS += richcoind
 endif
 
 if BUILD_BITCOIN_CLI
-  bin_PROGRAMS += myriadcoin-cli
+  bin_PROGRAMS += richcoin-cli
 endif
 
 SUBDIRS = . $(BUILD_QT) $(BUILD_TEST)
@@ -185,35 +185,35 @@ nodist_libbitcoin_common_a_SOURCES = $(top_srcdir)/src/obj/build.h
 #
 
 # bitcoind binary #
-myriadcoind_LDADD = \
+richcoind_LDADD = \
   libbitcoin_server.a \
   libbitcoin_cli.a \
   libbitcoin_common.a \
   $(LIBLEVELDB) \
   $(LIBMEMENV)
 if ENABLE_WALLET
-myriadcoind_LDADD += libbitcoin_wallet.a
+richcoind_LDADD += libbitcoin_wallet.a
 endif
-myriadcoind_SOURCES = bitcoind.cpp
+richcoind_SOURCES = bitcoind.cpp
 #
 
 if TARGET_WINDOWS
-myriadcoind_SOURCES += bitcoind-res.rc
+richcoind_SOURCES += bitcoind-res.rc
 endif
 
 AM_CPPFLAGS += $(BDB_CPPFLAGS)
-myriadcoind_LDADD += $(BOOST_LIBS) $(BDB_LIBS)
+richcoind_LDADD += $(BOOST_LIBS) $(BDB_LIBS)
 
 # bitcoin-cli binary #
-myriadcoin_cli_LDADD = \
+richcoin_cli_LDADD = \
   libbitcoin_cli.a \
   libbitcoin_common.a \
   $(BOOST_LIBS)
-myriadcoin_cli_SOURCES = bitcoin-cli.cpp
+richcoin_cli_SOURCES = bitcoin-cli.cpp
 #
 
 if TARGET_WINDOWS
-myriadcoin_cli_SOURCES += bitcoin-cli-res.rc
+richcoin_cli_SOURCES += bitcoin-cli-res.rc
 endif
 
 # NOTE: This dependency is not strictly necessary, but without it make may try to build both in parallel, which breaks the LevelDB build system in a race

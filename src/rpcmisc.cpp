@@ -37,7 +37,7 @@ Value getinfo(const Array& params, bool fHelp)
             "  \"version\": xxxxx,           (numeric) the server version\n"
             "  \"protocolversion\": xxxxx,   (numeric) the protocol version\n"
             "  \"walletversion\": xxxxx,     (numeric) the wallet version\n"
-            "  \"balance\": xxxxxxx,         (numeric) the total myriadcoin balance of the wallet\n"
+            "  \"balance\": xxxxxxx,         (numeric) the total richcoin balance of the wallet\n"
             "  \"blocks\": xxxxxx,           (numeric) the current number of blocks processed in the server\n"
             "  \"timeoffset\": xxxxx,        (numeric) the time offset\n"
             "  \"connections\": xxxxx,       (numeric) the number of connections\n"
@@ -180,14 +180,14 @@ Value validateaddress(const Array& params, bool fHelp)
 {
     if (fHelp || params.size() != 1)
         throw runtime_error(
-            "validateaddress \"myriadcoinaddress\"\n"
-            "\nReturn information about the given myriadcoin address.\n"
+            "validateaddress \"richcoinaddress\"\n"
+            "\nReturn information about the given richcoin address.\n"
             "\nArguments:\n"
-            "1. \"myriadcoinaddress\"     (string, required) The myriadcoin address to validate\n"
+            "1. \"richcoinaddress\"     (string, required) The richcoin address to validate\n"
             "\nResult:\n"
             "{\n"
             "  \"isvalid\" : true|false,            (boolean) If the address is valid or not. If not, this is the only property returned.\n"
-            "  \"address\" : \"myriadcoinaddress\", (string) The myriadcoin address validated\n"
+            "  \"address\" : \"richcoinaddress\", (string) The richcoin address validated\n"
             "  \"ismine\" : true|false,             (boolean) If the address is yours or not\n"
             "  \"isscript\" : true|false,           (boolean) If the key is a script\n"
             "  \"pubkey\" : \"publickeyhex\",       (string) The hex value of the raw public key\n"
@@ -291,9 +291,9 @@ Value createmultisig(const Array& params, bool fHelp)
 
             "\nArguments:\n"
             "1. nrequired      (numeric, required) The number of required signatures out of the n keys or addresses.\n"
-            "2. \"keys\"       (string, required) A json array of keys which are myriadcoin addresses or hex-encoded public keys\n"
+            "2. \"keys\"       (string, required) A json array of keys which are richcoin addresses or hex-encoded public keys\n"
             "     [\n"
-            "       \"key\"    (string) myriadcoin address or hex-encoded public key\n"
+            "       \"key\"    (string) richcoin address or hex-encoded public key\n"
             "       ,...\n"
             "     ]\n"
 
@@ -328,10 +328,10 @@ Value verifymessage(const Array& params, bool fHelp)
 {
     if (fHelp || params.size() != 3)
         throw runtime_error(
-            "verifymessage \"myriadcoinaddress\" \"signature\" \"message\"\n"
+            "verifymessage \"richcoinaddress\" \"signature\" \"message\"\n"
             "\nVerify a signed message\n"
             "\nArguments:\n"
-            "1. \"myriadcoinaddress\"  (string, required) The myriadcoin address to use for the signature.\n"
+            "1. \"richcoinaddress\"  (string, required) The richcoin address to use for the signature.\n"
             "2. \"signature\"          (string, required) The signature provided by the signer in base 64 encoding (see signmessage).\n"
             "3. \"message\"            (string, required) The message that was signed.\n"
             "\nResult:\n"

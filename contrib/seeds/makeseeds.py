@@ -11,9 +11,8 @@ from subprocess import check_output
 
 def main():
     lines = sys.stdin.readlines()
-
     ips = []
-    pattern = re.compile(r"^(\d{1,3})\.(\d{1,3})\.(\d{1,3})\.(\d{1,3}):10888")
+    pattern = re.compile(r"^(\d{1,3})\.(\d{1,3})\.(\d{1,3})\.(\d{1,3}):11777")
     for line in lines:
         m = pattern.match(line)
         if m is None:

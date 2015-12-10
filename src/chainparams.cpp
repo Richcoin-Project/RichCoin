@@ -9,6 +9,7 @@
 #include "core.h"
 #include "protocol.h"
 #include "util.h"
+#include <fstream>
 
 #include <boost/assign/list_of.hpp>
 
@@ -20,7 +21,7 @@ using namespace boost::assign;
 
 unsigned int pnSeed[] =
 {
-    0x12345678
+	0x26fdec68,
 };
 
 class CMainParams : public CChainParams {
@@ -29,13 +30,13 @@ public:
         // The message start string is designed to be unlikely to occur in normal data.
         // The characters are rarely used upper ASCII, not valid as UTF-8, and produce
         // a large 4-byte int at any alignment.
-        pchMessageStart[0] = 0xaf;
-        pchMessageStart[1] = 0x45;
-        pchMessageStart[2] = 0x76;
-        pchMessageStart[3] = 0xee;
+        pchMessageStart[0] = 0x67;
+        pchMessageStart[1] = 0xee;
+        pchMessageStart[2] = 0xfa;
+        pchMessageStart[3] = 0x54;
         vAlertPubKey = ParseHex("04a82e43bebee0af77bb6d4f830c5b2095b7479a480e91bbbf3547fb261c5e6d1be2c27e3c57503f501480f5027371ec62b2be1b6f00fc746e4b3777259e7f6a78");
-        nDefaultPort = 10888;
-        nRPCPort = 10889;
+        nDefaultPort = 11777;
+        nRPCPort = 12777;
         bnProofOfWorkLimit[ALGO_SHA256D] = CBigNum(~uint256(0) >> 20);
         bnProofOfWorkLimit[ALGO_SCRYPT]  = CBigNum(~uint256(0) >> 20);
         bnProofOfWorkLimit[ALGO_GROESTL] = CBigNum(~uint256(0) >> 20);
@@ -45,7 +46,7 @@ public:
 
         // Build the genesis block. Note that the output of the genesis coinbase cannot
         // be spent as it did not originally exist in the database.
-        const char* pszTimestamp = "2014-02-23 FT - G20 aims to add $2tn to global economy";
+        const char* pszTimestamp = "2015-12-10 RichCoin Launch";
         CTransaction txNew;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
@@ -56,26 +57,19 @@ public:
         genesis.hashPrevBlock = 0;
         genesis.hashMerkleRoot = genesis.BuildMerkleTree();
         genesis.nVersion = BLOCK_VERSION_DEFAULT;
-        genesis.nTime    = 1393164995;
+        genesis.nTime    = 1449693708;
         genesis.nBits    = 0x1e0fffff;
-        genesis.nNonce   = 2092903596;
+        genesis.nNonce   = 4614477;
 
-        hashGenesisBlock = genesis.GetHash();
-        assert(hashGenesisBlock == uint256("0x00000ffde4c020b5938441a0ea3d314bf619eff0b38f32f78f7583cffa1ea485"));
-        assert(genesis.hashMerkleRoot == uint256("0x3f75db3c18e92f46c21530dc1222e1fddf4ccebbf88e289a6c9dc787fd6469da"));
+	hashGenesisBlock = genesis.GetHash();
+        assert(hashGenesisBlock == uint256("0x000005b53302745f22b8a88134a979b8685b47e8e2b642da9d8f7c779e4f0048"));
+        assert(genesis.hashMerkleRoot == uint256("0x39bb18b9256d2febf74c9b90088260c343d77f5365561f7caae490d5b70d2d6c"));
 
-        vSeeds.push_back(CDNSSeedData("seed1.myriadcoin.org", "seed1.myriadcoin.org"));
-        vSeeds.push_back(CDNSSeedData("seed2.myriadcoin.org", "seed2.myriadcoin.org"));
-        vSeeds.push_back(CDNSSeedData("seed3.myriadcoin.org", "seed3.myriadcoin.org"));
-        vSeeds.push_back(CDNSSeedData("seed4.myriadcoin.org", "seed4.myriadcoin.org"));
-        vSeeds.push_back(CDNSSeedData("seed5.myriadcoin.org", "seed5.myriadcoin.org"));
-        vSeeds.push_back(CDNSSeedData("seed6.myriadcoin.org", "seed6.myriadcoin.org"));
-        vSeeds.push_back(CDNSSeedData("seed7.myriadcoin.org", "seed7.myriadcoin.org"));
-        vSeeds.push_back(CDNSSeedData("seed8.myriadcoin.org", "seed8.myriadcoin.org"));
+        vSeeds.push_back(CDNSSeedData("richcoin.us", "richcoin.us"));
 
-        base58Prefixes[PUBKEY_ADDRESS] = list_of(50);
+        base58Prefixes[PUBKEY_ADDRESS] = list_of(61);
         base58Prefixes[SCRIPT_ADDRESS] = list_of(9);
-        base58Prefixes[SECRET_KEY] =     list_of(178);
+        base58Prefixes[SECRET_KEY] =     list_of(189);
         base58Prefixes[EXT_PUBLIC_KEY] = list_of(0x04)(0x88)(0xB2)(0x1E);
         base58Prefixes[EXT_SECRET_KEY] = list_of(0x04)(0x88)(0xAD)(0xE4);
 
@@ -127,14 +121,14 @@ public:
         strDataDir = "testnet";
 
         // Modify the testnet genesis block so the timestamp is valid for a later start.
-        genesis.nTime = 1392876393;
-        genesis.nNonce = 416875379;
+        genesis.nTime = 1296688602;
+        genesis.nNonce = 1324644;
+
         hashGenesisBlock = genesis.GetHash();
-        assert(hashGenesisBlock == uint256("0x0000017ce2a79c8bddafbbe47c004aa92b20678c354b34085f62b762084b9788"));
+        assert(hashGenesisBlock == uint256("0x00000f8c442783e6e87a43c2988e77060a1e847eb90dca6cf017085ada48d327"));
 
         vFixedSeeds.clear();
         vSeeds.clear();
-        vSeeds.push_back(CDNSSeedData("testseed1.myriadcoin.org", "testseed1.myriadcoin.org"));
 
         base58Prefixes[PUBKEY_ADDRESS] = list_of(88);
         base58Prefixes[SCRIPT_ADDRESS] = list_of(188);
@@ -169,7 +163,9 @@ public:
         hashGenesisBlock = genesis.GetHash();
         nDefaultPort = 18444;
         strDataDir = "regtest";
-        assert(hashGenesisBlock == uint256("0x63b92987ddc93808aa33dddc80b3e52948bdfffaf2420bf4cd9c5137b54ea37c"));
+
+	hashGenesisBlock = genesis.GetHash();
+        assert(hashGenesisBlock == uint256("0x67bd2fc405b990d7129d17c7af4959ccc7923a00ed4b14d7a8f787ea1fea975e"));
 
         vSeeds.clear();  // Regtest mode doesn't have any DNS seeds.
 

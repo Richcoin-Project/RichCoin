@@ -1,11 +1,11 @@
 *.tar.gz
 
 *.exe
-src/myriadcoin
-src/myriadcoind
-src/myriadcoin-cli
-src/test/test_myriadcoin
-src/qt/test/test_myriadcoin-qt
+src/richcoin
+src/richcoind
+src/richcoin-cli
+src/test/test_richcoin
+src/qt/test/test_richcoin-qt
 
 Makefile.in
 aclocal.m4
@@ -36,7 +36,7 @@ src/qt/test/moc*.cpp
 *.o
 *.o-*
 *.patch
-.myriadcoin
+.richcoin
 *.a
 *.pb.cc
 *.pb.h
@@ -51,12 +51,12 @@ src/qt/test/moc*.cpp
 # Compilation and Qt preprocessor part
 *.qm
 Makefile
-myriadcoin-qt
-Myriadcoin-Qt.app
+richcoin-qt
+Richcoin-Qt.app
 
 # Unit-tests
 Makefile.test
-myriadcoin-qt_test
+richcoin-qt_test
 
 # Resources cpp
 qrc_*.cpp
