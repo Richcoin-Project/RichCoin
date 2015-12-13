@@ -76,7 +76,7 @@ static const int BLOCK_VERSION_AUXPOW_WITH_AUX = BLOCK_VERSION_AUXPOW_BARE | BLO
 static const int BLOCK_VERSION_AUXPOW_WITHOUT_AUX = BLOCK_VERSION_AUXPOW_BARE & ~BLOCK_VERSION_AUXPOW;
 
 /** Stealth addresses */
-static const int64_t BLOCK_STEALTH_START = 740000;
+static const int64_t BLOCK_STEALTH_START = 0;
 
 #ifdef USE_UPNP
 static const int fHaveUPnP = true;
