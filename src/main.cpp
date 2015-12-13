@@ -28,7 +28,7 @@ using namespace std;
 using namespace boost;
 
 #if defined(NDEBUG)
-# error "Myriadcoin cannot be compiled without assertions."
+# error "Richcoin cannot be compiled without assertions."
 #endif
 
 //
@@ -71,7 +71,7 @@ map<uint256, set<uint256> > mapOrphanTransactionsByPrev;
 // Constant stuff for coinbase transactions we create:
 CScript COINBASE_FLAGS;
 
-const string strMessageMagic = "Myriadcoin Signed Message:\n";
+const string strMessageMagic = "Richcoin Signed Message:\n";
 
 // Settings
 int miningAlgo = ALGO_SHA256D;

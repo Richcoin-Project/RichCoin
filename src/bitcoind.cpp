@@ -86,11 +86,11 @@ bool AppInit(int argc, char* argv[])
         if (mapArgs.count("-?") || mapArgs.count("--help"))
         {
             // First part of help message is specific to bitcoind / RPC client
-            std::string strUsage = _("Myriadcoin Core Daemon") + " " + _("version") + " " + FormatFullVersion() + "\n\n" +
+            std::string strUsage = _("Richcoin Core Daemon") + " " + _("version") + " " + FormatFullVersion() + "\n\n" +
                 _("Usage:") + "\n" +
-                  "  richcoind [options]                     " + _("Start Myriadcoin Core Daemon") + "\n" +
+                  "  richcoind [options]                     " + _("Start Richcoin Core Daemon") + "\n" +
                 _("Usage (deprecated, use richcoin-cli):") + "\n" +
-                  "  richcoind [options] <command> [params]  " + _("Send command to Myriadcoin Core") + "\n" +
+                  "  richcoind [options] <command> [params]  " + _("Send command to Richcoin Core") + "\n" +
                   "  richcoind [options] help                " + _("List commands") + "\n" +
                   "  richcoind [options] help <command>      " + _("Get help for a command") + "\n";
 
@@ -116,7 +116,7 @@ bool AppInit(int argc, char* argv[])
         fDaemon = GetBoolArg("-daemon", false);
         if (fDaemon)
         {
-            fprintf(stdout, "Myriadcoin server starting\n");
+            fprintf(stdout, "Richcoin server starting\n");
 
             // Daemonize
             pid_t pid = fork();

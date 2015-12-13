@@ -41,9 +41,9 @@ static const int MAX_PAYMENT_REQUEST_SIZE = 50000; // bytes
 /* Number of frames in spinner animation */
 #define SPINNER_FRAMES 35
 
-#define QAPP_ORG_NAME "Myriadcoin"
+#define QAPP_ORG_NAME "Richcoin"
 #define QAPP_ORG_DOMAIN "richcoin.org"
-#define QAPP_APP_NAME_DEFAULT "Myriadcoin-Qt"
-#define QAPP_APP_NAME_TESTNET "Myriadcoin-Qt-testnet"
+#define QAPP_APP_NAME_DEFAULT "Richcoin-Qt"
+#define QAPP_APP_NAME_TESTNET "Richcoin-Qt-testnet"
 
 #endif // GUICONSTANTS_H

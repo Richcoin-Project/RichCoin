@@ -508,7 +508,7 @@ bool CheckWork(CBlock* pblock, CWallet& wallet, CReserveKey& reservekey)
             return error("AUX POW parent hash %s is not under target %s", auxpow->GetParentBlockHash(algo).GetHex().c_str(), hashTarget.GetHex().c_str());
 
         // print to log
-        LogPrintf("MyriadMiner: AUX proof-of-work found; our hash: %s ; parent hash: %s ; target: %s\n",
+        LogPrintf("RichMiner: AUX proof-of-work found; our hash: %s ; parent hash: %s ; target: %s\n",
                hash.GetHex().c_str(),
                auxpow->GetParentBlockHash(algo).GetHex().c_str(),
                hashTarget.GetHex().c_str());
@@ -519,7 +519,7 @@ bool CheckWork(CBlock* pblock, CWallet& wallet, CReserveKey& reservekey)
             return false;
 
         // print to log
-        LogPrintf("MyriadMiner: proof-of-work found; hashPoW: %s ; target: %s\n", hashPoW.GetHex().c_str(), hashTarget.GetHex().c_str());
+        LogPrintf("RichMiner: proof-of-work found; hashPoW: %s ; target: %s\n", hashPoW.GetHex().c_str(), hashTarget.GetHex().c_str());
     }
 
     pblock->print();
@@ -529,7 +529,7 @@ bool CheckWork(CBlock* pblock, CWallet& wallet, CReserveKey& reservekey)
     {
         LOCK(cs_main);
         if (pblock->hashPrevBlock != chainActive.Tip()->GetBlockHash())
-            return error("MyriadMiner : generated block is stale");
+            return error("RichMiner : generated block is stale");
 
         // Remove key from key pool
         reservekey.KeepKey();
@@ -543,7 +543,7 @@ bool CheckWork(CBlock* pblock, CWallet& wallet, CReserveKey& reservekey)
         // Process this block the same as if we had received it from another node
         CValidationState state;
         if (!ProcessBlock(state, NULL, pblock))
-            return error("MyriadMiner : ProcessBlock, block not accepted");
+            return error("RichMiner : ProcessBlock, block not accepted");
     }
 
     return true;
@@ -931,7 +931,7 @@ void static GenericMiner(CWallet *pwallet, int algo)
 
 void static ThreadBitcoinMiner(CWallet *pwallet)
 {
-    LogPrintf("Myriadcoin miner started\n");
+    LogPrintf("Richcoin miner started\n");
     SetThreadPriority(THREAD_PRIORITY_LOWEST);
     RenameThread("bitcoin-miner");
 
@@ -958,7 +958,7 @@ void static ThreadBitcoinMiner(CWallet *pwallet)
     }
     catch (boost::thread_interrupted)
     {
-        LogPrintf("Myriadcoin miner terminated\n");
+        LogPrintf("Richcoin miner terminated\n");
         throw;
     }
 }
