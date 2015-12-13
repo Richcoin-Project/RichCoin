@@ -1256,29 +1256,33 @@ const CBlockIndex* GetLastBlockIndexForAlgo(const CBlockIndex* pindex, int algo)
 
 int64_t GetBlockValue(int nHeight, int64_t nFees)
 {
-    int64_t nSubsidy = 0;
+    int64_t nSubsidy = ;
+
+    // Premined Coins
     if(nHeight == 1)
     {
-	nSubsidy = 5250000;
+       nSubsidy = 5250000;
     }
-    else if(nHeight <= 3153600)
-    {
-	nSubsidy = 4;
-    }
+    else if(nHeight < 
     return nSubsidy + nFees;
 }
 
-static const int64_t nTargetTimespan = 150; // 5 minutes (NUM_ALGOS * 60 seconds)
-static const int64_t nTargetSpacing = 150; // 2.5 minutes (NUM_ALGOS * 30 seconds)
+static const int64_t nTargetTimespanP1 = 150; // 2.5 minutes (NUM_ALGOS * 30 seconds)
+static const int64_t nTargetTimespanP2 = 300; // 5 minutes (NUM_ALGOS * 60 seconds)
+static const int64_t nTargetSpacingP1 = 150; // 2.5 minutes (NUM_ALGOS * 30 seconds)
+static const int64_t nTargetSpacingP2 = 300; // 5 minutes (NUM_ALGOS * 60 seconds)
 static const int64_t nInterval = 1; // retargets every blocks
 
 static const int64_t nAveragingInterval = 10; // 10 blocks
-static const int64_t nAveragingTargetTimespan = nAveragingInterval * nTargetSpacing; // 25 minutes
+static const int64_t nAveragingTargetTimespanP1 = nAveragingInterval * nTargetSpacingP1; // 25 minutes
+static const int64_t nAveragingTargetTimespanP2 = nAveragingInterval * nTargetSpacingP2; // 50 minutes
 
 static const int64_t nMaxAdjustDown = 4; // 4% adjustment down
-static const int64_t nMaxAdjustUp = 4; // 4% adjustment up
+static const int64_t nMaxAdjustUpV1 = 2; // 2% adjustment up
+static const int64_t nMaxAdjustUpV2 = 4; // 4% adjustment up
 
-static const int64_t nTargetTimespanAdjDown = nTargetTimespan * (100 + nMaxAdjustDown) / 100;
+static const int64_t nTargetTimespanAdjDownP1 = nTargetTimespanP1 * (100 + nMaxAdjustDown) / 100;
+static const int64_t nTargetTimespanAdjDownP2 = nTargetTimespanP2 * (100 + nMaxAdjustDown) / 100;
 
 
 //
@@ -1287,11 +1291,34 @@ static const int64_t nTargetTimespanAdjDown = nTargetTimespan * (100 + nMaxAdjus
 //
 unsigned int ComputeMinWork(unsigned int nBase, int64_t nTime)
 {
+/*
+    const CBigNum &bnLimit = Params().ProofOfWorkLimit();
+    // Testnet has min-difficulty blocks
+    // after nTargetSpacing*2 time between blocks:
+    if (TestNet() && nTime > nTargetSpacing*2)
+        return bnLimit.GetCompact();
+
+    CBigNum bnResult;
+    bnResult.SetCompact(nBase);
+    while (nTime > 0 && bnResult < bnLimit)
+    {
+        // Maximum 400% adjustment...
+        bnResult *= 4;
+        // ... in best-case exactly 4-times-normal target time
+        nTime -= nTargetTimespan*4;
+    }
+    if (bnResult > bnLimit)
+        bnResult = bnLimit;
+    return bnResult.GetCompact();
+*/
     return Params().ProofOfWorkLimit(ALGO_SHA256D).GetCompact();
 }
 
-static const int64_t nMinActualTimespan = nAveragingTargetTimespan * (100 - nMaxAdjustUp) / 100;
-static const int64_t nMaxActualTimespan = nAveragingTargetTimespan * (100 + nMaxAdjustDown) / 100;
+static const int64_t nMinActualTimespanV1 = nAveragingTargetTimespanP1 * (100 - nMaxAdjustUpV1) / 100;
+static const int64_t nMinActualTimespanV2 = nAveragingTargetTimespanP1 * (100 - nMaxAdjustUpV2) / 100;
+static const int64_t nMinActualTimespanP2 = nAveragingTargetTimespanP2 * (100 - nMaxAdjustUpV2) / 100;
+static const int64_t nMaxActualTimespanP1 = nAveragingTargetTimespanP1 * (100 + nMaxAdjustDown) / 100;
+static const int64_t nMaxActualTimespanP2 = nAveragingTargetTimespanP2 * (100 + nMaxAdjustDown) / 100;
 
 unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHeader *pblock, int algo)
 {
@@ -1301,6 +1328,24 @@ unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHead
     if (pindexLast == NULL)
         return nProofOfWorkLimit;
 
+/*
+    if (TestNet())
+    {
+        // Special difficulty rule for testnet:
+        // If the new block's timestamp is more than 2* 10 minutes
+        // then allow mining of a min-difficulty block.
+        if (pblock->nTime > pindexLast->nTime + nTargetSpacingP2*2)
+            return nProofOfWorkLimit;
+        else
+        {
+            // Return the last non-special-min-difficulty-rules-block
+            const CBlockIndex* pindex = pindexLast;
+            while (pindex->pprev && pindex->nHeight % nInterval != 0 && pindex->nBits == nProofOfWorkLimit)
+                pindex = pindex->pprev;
+            return pindex->nBits;
+        }
+    }
+*/
     // find previous block with same algo
     const CBlockIndex* pindexPrev = GetLastBlockIndexForAlgo(pindexLast, algo);
     if (pindexPrev == NULL)
@@ -1308,39 +1353,143 @@ unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHead
 
     const CBlockIndex* pindexFirst = NULL;
 
-    // find first block in averaging interval
-    // Go back by what we want to be nAveragingInterval blocks
-    pindexFirst = pindexPrev;
-    for (int i = 0; pindexFirst && i < nAveragingInterval - 1; i++)
+    if ( (pindexLast->nHeight >= nBlockTimeWarpPreventStart2) &&
+         (pindexLast->nHeight < nBlockTimeWarpPreventStart3) )
     {
-         pindexFirst = pindexFirst->pprev;
-         pindexFirst = GetLastBlockIndexForAlgo(pindexFirst, algo);
+        // find first block in averaging interval
+        // Go back by what we want to be nAveragingInterval blocks
+        pindexFirst = pindexPrev;
+        for (int i = 0; pindexFirst && i < nAveragingInterval - 1; i++)
+        {
+            pindexFirst = pindexFirst->pprev;
+            pindexFirst = GetLastBlockIndexForAlgo(pindexFirst, algo);
+        }
+        if (pindexFirst == NULL)
+            return nProofOfWorkLimit; // not nAveragingInterval blocks of this algo available
+
+        const CBlockIndex* pindexFirstPrev;
+        for ( ;; )
+        {
+            // check blocks before first block for time warp
+            pindexFirstPrev = pindexFirst->pprev;
+            if (pindexFirstPrev == NULL)
+                return nProofOfWorkLimit;
+            pindexFirstPrev = GetLastBlockIndexForAlgo(pindexFirstPrev, algo);
+            if (pindexFirstPrev == NULL)
+                return nProofOfWorkLimit;
+            // take previous block if block times are out of order
+            if (pindexFirstPrev->GetBlockTime() > pindexFirst->GetBlockTime())
+            {
+                LogPrintf("  First blocks out of order times, swapping:   %d   %d\n", pindexFirstPrev->GetBlockTime(), pindexFirst->GetBlockTime());
+                pindexFirst = pindexFirstPrev;
+            }
+            else
+                break;
+        }
     }
-    if (pindexFirst == NULL)
-        return nProofOfWorkLimit; // not nAveragingInterval blocks of this algo available
+    else
+    if ( (pindexLast->nHeight >= nBlockTimeWarpPreventStart) &&
+         (pindexLast->nHeight < nBlockTimeWarpPreventStart2) )
+    {
+        // find first block in averaging interval
+        // Go back by what we want to be nAveragingInterval blocks
+        pindexFirst = pindexPrev;
+        for (int i = 0; pindexFirst && i < nAveragingInterval - 1; i++)
+        {
+            pindexFirst = pindexFirst->pprev;
+            pindexFirst = GetLastBlockIndexForAlgo(pindexFirst, algo);
+        }
+        if (pindexFirst == NULL)
+            return nProofOfWorkLimit; // not nAveragingInterval blocks of this algo available
+
+        // check block before first block for time warp
+        const CBlockIndex* pindexFirstPrev = pindexFirst->pprev;
+        if (pindexFirstPrev == NULL)
+            return nProofOfWorkLimit;
+        pindexFirstPrev = GetLastBlockIndexForAlgo(pindexFirstPrev, algo);
+        if (pindexFirstPrev == NULL)
+            return nProofOfWorkLimit;
+        // take previous block if block times are out of order
+        if (pindexFirstPrev->GetBlockTime() > pindexFirst->GetBlockTime())
+        {
+            LogPrintf("  First blocks out of order times, swapping:   %d   %d\n", pindexFirstPrev->GetBlockTime(), pindexFirst->GetBlockTime());
+            pindexFirst = pindexFirstPrev;
+        }
+    }
+    else
+    {
+        // find first block in averaging interval
+        // Go back by what we want to be nAveragingInterval blocks
+        pindexFirst = pindexPrev;
+        for (int i = 0; pindexFirst && i < nAveragingInterval - 1; i++)
+        {
+            pindexFirst = pindexFirst->pprev;
+            pindexFirst = GetLastBlockIndexForAlgo(pindexFirst, algo);
+        }
+        if (pindexFirst == NULL)
+            return nProofOfWorkLimit; // not nAveragingInterval blocks of this algo available
+    }
 
     // Limit adjustment step
-    int64_t nActualTimespan = pindexPrev->GetMedianTimePast() - pindexFirst->GetMedianTimePast();
+    int64_t nActualTimespan;
+    if (pindexLast->nHeight >= nBlockTimeWarpPreventStart3)
+        nActualTimespan = pindexPrev->GetMedianTimePast() - pindexFirst->GetMedianTimePast();
+    else
+        nActualTimespan = pindexPrev->GetBlockTime() - pindexFirst->GetBlockTime();
+
     LogPrintf("  nActualTimespan = %d before bounds   %d   %d\n", nActualTimespan, pindexPrev->GetBlockTime(), pindexFirst->GetBlockTime());
 
-    if (nActualTimespan < nMinActualTimespan)
-        nActualTimespan = nMinActualTimespan;
-    if (nActualTimespan > nMaxActualTimespan)
-        nActualTimespan = nMaxActualTimespan;
-    LogPrintf("  nActualTimespan = %d after bounds   %d   %d\n", nActualTimespan, nMinActualTimespan, nMaxActualTimespan);
+    // Time warp mitigation: Don't adjust difficulty if time is negative
+    if ( (pindexLast->nHeight >= nBlockTimeWarpPreventStart) &&
+         (pindexLast->nHeight < nBlockTimeWarpPreventStart2) )
+    {
+        if (nActualTimespan < 0)
+        {
+            LogPrintf("  nActualTimespan negative %d\n", nActualTimespan);
+            LogPrintf("  Keeping: %08x  %s\n", pindexPrev->nBits, CBigNum().SetCompact(pindexPrev->nBits).getuint256().ToString());
+            return pindexPrev->nBits;
+        }
+    }
+
+    int64_t lnMinActualTimespan;
+    if ((TestNet() && pindexLast->nHeight>=150) || (pindexLast->nHeight >= Phase2Timespan_Start))
+        lnMinActualTimespan = nMinActualTimespanP2;
+    else
+        if (pindexLast->nHeight >= nBlockDiffAdjustV2)
+            lnMinActualTimespan = nMinActualTimespanV2;
+        else
+            lnMinActualTimespan = nMinActualTimespanV1;
+
+    int64_t lnMaxActualTimespan;
+    if ((TestNet() && pindexLast->nHeight>=150) || (pindexLast->nHeight >= Phase2Timespan_Start))
+        lnMaxActualTimespan = nMaxActualTimespanP2;
+    else
+        lnMaxActualTimespan = nMaxActualTimespanP1;
+
+    if (nActualTimespan < lnMinActualTimespan)
+        nActualTimespan = lnMinActualTimespan;
+    if (nActualTimespan > lnMaxActualTimespan)
+        nActualTimespan = lnMaxActualTimespan;
+    LogPrintf("  nActualTimespan = %d after bounds   %d   %d\n", nActualTimespan, lnMinActualTimespan, lnMaxActualTimespan);
+
+    int64_t lnAveragingTargetTimespan;
+    if ((TestNet() && pindexLast->nHeight>=150) || (pindexLast->nHeight >= Phase2Timespan_Start))
+        lnAveragingTargetTimespan = nAveragingTargetTimespanP2;
+    else
+        lnAveragingTargetTimespan = nAveragingTargetTimespanP1;
 
     // Retarget
     CBigNum bnNew;
     bnNew.SetCompact(pindexPrev->nBits);
     bnNew *= nActualTimespan;
-    bnNew /= nAveragingTargetTimespan;
+    bnNew /= lnAveragingTargetTimespan;
 
     if (bnNew > Params().ProofOfWorkLimit(algo))
         bnNew = Params().ProofOfWorkLimit(algo);
 
     /// debug print
     LogPrintf("GetNextWorkRequired RETARGET\n");
-    LogPrintf("nTargetTimespan = %d    nActualTimespan = %d\n", nAveragingTargetTimespan, nActualTimespan);
+    LogPrintf("nTargetTimespan = %d    nActualTimespan = %d\n", lnAveragingTargetTimespan, nActualTimespan);
     LogPrintf("Before: %08x  %s\n", pindexLast->nBits, CBigNum().SetCompact(pindexPrev->nBits).getuint256().ToString());
     LogPrintf("After:  %08x  %s\n", bnNew.GetCompact(), bnNew.getuint256().ToString());
 

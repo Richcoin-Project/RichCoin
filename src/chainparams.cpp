@@ -42,7 +42,6 @@ public:
         bnProofOfWorkLimit[ALGO_GROESTL] = CBigNum(~uint256(0) >> 20);
         bnProofOfWorkLimit[ALGO_SKEIN]   = CBigNum(~uint256(0) >> 20);
         bnProofOfWorkLimit[ALGO_QUBIT]   = CBigNum(~uint256(0) >> 20);
-        nSubsidyHalvingInterval = 80640 * 12;
 
         // Build the genesis block. Note that the output of the genesis coinbase cannot
         // be spent as it did not originally exist in the database.
@@ -151,7 +150,6 @@ public:
         pchMessageStart[1] = 0x0f;
         pchMessageStart[2] = 0xa5;
         pchMessageStart[3] = 0x5a;
-        nSubsidyHalvingInterval = 150;
         bnProofOfWorkLimit[ALGO_SHA256D] = CBigNum(~uint256(0) >> 1);
         bnProofOfWorkLimit[ALGO_SCRYPT]  = CBigNum(~uint256(0) >> 1);
         bnProofOfWorkLimit[ALGO_GROESTL] = CBigNum(~uint256(0) >> 1);
